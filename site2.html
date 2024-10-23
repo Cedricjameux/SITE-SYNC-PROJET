@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéo B</title>
+</head>
+<body>
+    <video id="videoB" width="600" controls autoplay loop>
+        <source src="videoB.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <script>
+        // Démarre la vidéo à l'heure spécifiée (ex. 14h30)
+        const startHour = 19; // 14h
+        const startMinute = 28; // 30 minutes
+
+        function checkTimeAndPlay() {
+            const now = new Date();
+            if (now.getHours() === startHour && now.getMinutes() === startMinute) {
+                const video = document.getElementById('videoB');
+                video.play();
+            }
+        }
+
+        setInterval(checkTimeAndPlay, 60000); // Vérifie chaque minute
+    </script>
+</body>
+</html>
